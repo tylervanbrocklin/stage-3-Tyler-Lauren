@@ -12,6 +12,7 @@ import {
 import HomePage from "./Home.js";
 import AboutUsPage from "./AboutUs.js";
 import HouseFinder from "./Houses.js";
+import MapPage from "./MapFinder.js";
 import './App.css';
 
 const Home = () => (
@@ -26,6 +27,10 @@ const Houses = () => (
     <HouseFinder/>
 );
 
+const MapFinder = () => (
+    <MapPage/>
+);
+
 class App extends Component {
   render() {
       let data = this.props.data;
@@ -35,6 +40,7 @@ class App extends Component {
             <Route path="/Home" component={Home}/>
             <Route path="/AboutUs" component={AboutUs}/>
             <Route path="/Houses" component={Houses}/>
+            <Route path="/MapPage" component={MapFinder}/>
             <Footer/>
         </React.Fragment>
 
@@ -75,6 +81,9 @@ class Header extends Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink tag={Link} to="/Houses">Houses</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={Link} to="/MapPage">Map</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink disabled>Apartments</NavLink>
